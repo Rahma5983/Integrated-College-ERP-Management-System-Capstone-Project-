@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
-    // IMPORTANT: Change 'password' below to match your real MySQL root password!
-    private static final String URL = "jdbc:mysql://localhost:3306/college_erp";
-    private static final String USER = "root";
-    private static final String PASSWORD = "rahmakhangoenka@555"; 
+    // Fixed: Added jdbc: to the start of the URL string
+    private static final String URL = "jdbc:mysql://mysql-39c4db68-rahmakhan2022-ae3a.h.aivencloud.com:24795/defaultdb?ssl-mode=REQUIRED";
+    private static final String USER = "avnadmin";
+    private static final String PASSWORD = "AVNS_dAoLVZsfu3XvjggcZTz"; 
 
     public static Connection getConnection() {
         try {
