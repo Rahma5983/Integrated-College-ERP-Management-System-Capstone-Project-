@@ -1,0 +1,20 @@
+# Ignore Maven build outputs
+target/
+*.war
+*.ear
+*.jar
+
+# Ignore Eclipse metadata
+.settings/
+.project
+.classpath
+.factorypath
+
+# Ignore IntelliJ and VS Code folders
+.idea/
+*.iml
+.vscode/
+
+# Ignore local configuration caches
+*.class
+*.log
