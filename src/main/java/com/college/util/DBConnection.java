@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
-    // IMPORTANT: Change 'password' below to match your real MySQL root password!
-    private static final String URL = "jdbc:mysql://localhost:3306/college_erp";
+    // Updated to use your live Railway Cloud Database details
+    private static final String URL = "jdbc:mysql://viaduct.proxy.rlwy.net:3306/railway";
     private static final String USER = "root";
-    private static final String PASSWORD = "rahmakhangoenka@555"; 
+    private static final String PASSWORD = "iPATsNvXLjJQFrwrhfscTwfiPlEYsjax"; 
 
     public static Connection getConnection() {
         try {
