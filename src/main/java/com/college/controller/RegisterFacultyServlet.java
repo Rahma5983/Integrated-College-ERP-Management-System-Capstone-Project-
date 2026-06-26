@@ -26,16 +26,14 @@ public class RegisterFacultyServlet extends HttpServlet {
         Connection conn = null;
         try {
             conn = DBConnection.getConnection();
-            conn.setAutoCommit(false); // Atomicity safety check
+            conn.setAutoCommit(false); 
 
-            // Action 1: Create baseline authentication records
             String userQuery = "INSERT INTO users (user_id, password, role) VALUES (?, ?, 'FACULTY')";
             PreparedStatement psUser = conn.prepareStatement(userQuery);
             psUser.setString(1, facultyId);
             psUser.setString(2, password);
             psUser.executeUpdate();
 
-            // Action 2: Populate core professional staff parameters
             String facultyQuery = "INSERT INTO faculty (faculty_id, first_name, last_name, email, department, designation) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement psFaculty = conn.prepareStatement(facultyQuery);
             psFaculty.setString(1, facultyId);
