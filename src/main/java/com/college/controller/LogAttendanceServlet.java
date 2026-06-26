@@ -25,7 +25,7 @@ public class LogAttendanceServlet extends HttpServlet {
         }
 
         try {
-            // Force load Driver class to avoid internal Tomcat classpath drops
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             try (Connection conn = DBConnection.getConnection()) {
@@ -38,7 +38,7 @@ public class LogAttendanceServlet extends HttpServlet {
                 int rowsInserted = ps.executeUpdate();
                 
                 if (rowsInserted > 0) {
-                    // Redirect back with explicit success flag parameter
+                    
                     response.sendRedirect("attendance_management.jsp?status=att_success");
                     return;
                 } else {
@@ -48,7 +48,6 @@ public class LogAttendanceServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace(); // Check your Eclipse console logs for this!
             
-            // Safe fallback response layout - prevents blank screens completely
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
             out.println("<html><body style='font-family:sans-serif; padding:50px; text-align:center;'>");
